@@ -1,0 +1,12 @@
+{
+    "ID": "188b0b5c-159b-11ed-861d-0242ac120002",
+    "ActionKeyword": "cf",
+    "Name": "CyberChef",
+    "Description": "Send the input to CyberChef",
+    "Author": "Flow Launcher",
+    "Version": "1.0.0",
+    "Language": "python",
+    "Website": "https://github.com/gamous/Flow.Launcher.Plugin.CyberChef",
+    "IcoPath": "Images\\app.png",
+    "ExecuteFileName": "main.py"
+}
