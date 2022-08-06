@@ -1,0 +1,6 @@
+body:
+  - type: input
+    attributes:
+      name: site_url
+      label: 'URL:'
+      description: Url of CyberChef
