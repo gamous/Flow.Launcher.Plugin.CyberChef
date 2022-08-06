@@ -2,7 +2,7 @@
     "ID": "188b0b5c-159b-11ed-861d-0242ac120002",
     "ActionKeyword": "cf",
     "Name": "CyberChef",
-    "Description": "Send the input to CyberChef",
+    "Description": "Send your input to the CyberChef",
     "Author": "Flow Launcher",
     "Version": "1.0.0",
     "Language": "python",
