@@ -38,7 +38,7 @@ class CyberChef(FlowLauncher):
 
     def query(self, query):
         self.site_url = self.settings.get("site_url")
-        if self.site_url==None:
+        if self.site_url==None or self.site_url=="":
             self.site_url="https://gchq.github.io/CyberChef"
         return [
             {
