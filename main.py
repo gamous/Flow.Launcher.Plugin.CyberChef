@@ -60,9 +60,8 @@ class CyberChef(FlowLauncher):
         if self.site_url==None or self.site_url=="":
             self.site_url="https://gchq.github.io/CyberChef"
         if data==None:
-            data=""
-        else:
-            data=data[0]
+            data=[""]
+        data=data[0]
         return [
             {
                 "title": "To Base64",
