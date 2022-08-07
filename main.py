@@ -38,6 +38,7 @@ class CyberChef(FlowLauncher):
 
     def query(self, query):
         self.site_url = self.settings.get("site_url")
+        self.query_string=query
         if self.site_url==None or self.site_url=="":
             self.site_url="https://gchq.github.io/CyberChef"
         return [
@@ -47,8 +48,9 @@ class CyberChef(FlowLauncher):
                 "icoPath": "Images/app.png",
                 "jsonRPCAction": {
                     "method": "open_url",
-                    "parameters": [self.site_url+"/#input={}".format(base64.b64encode(query.encode()).decode())]
+                    "parameters": [self.site_url+"/#input={}".format(base64.b64encode(query.encode()).decode())],
                 },
+                "contextData":[query],
                 "score": 0
             }
         ]
@@ -59,25 +61,26 @@ class CyberChef(FlowLauncher):
             self.site_url="https://gchq.github.io/CyberChef"
         if data==None:
             data=""
-        #Todo: data parameter isn't the query?
+        else:
+            data=data[0]
         return [
             {
                 "title": "To Base64",
                 "subTitle": "Base64 encode",
-                "icoPath": "Images/app.png", # related path to the image
+                "icoPath": "Images/app.png",
                 "jsonRPCAction": {
                     "method": "open_url",
-                    "parameters": [self.site_url+f"/#recipe=To_Base64('A-Za-z0-9%2B/%3D')&input={base64.b64encode(data.encode()).decode()}"]
+                    "parameters": [self.site_url+"/#recipe=To_Base64('A-Za-z0-9%2B/%3D')&input="+base64.b64encode(data.encode()).decode().strip('=')]
                 },
                 "score" : 0
             },
             {
                 "title": "From Base64",
                 "subTitle": "Base64 decode",
-                "icoPath": "Images/app.png", # related path to the image
+                "icoPath": "Images/app.png",
                 "jsonRPCAction": {
                     "method": "open_url",
-                    "parameters": [self.site_url+f"/#recipe=From_Base64('A-Za-z0-9%2B/%3D')&input={base64.b64encode(data.encode()).decode()}"]
+                    "parameters": [self.site_url+"/#recipe=From_Base64('A-Za-z0-9%2B/%3D')&input="+base64.b64encode(data.encode()).decode().strip('=')]
                 },
                 "score" : 0
             }
