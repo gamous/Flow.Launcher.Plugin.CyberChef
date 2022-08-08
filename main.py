@@ -11,10 +11,6 @@ from functools import cached_property
 
 class CyberChef(FlowLauncher):
 
-    #def __init__(self, *args, **kwargs):
-    #    super().__init__(*args, **kwargs)
-    #    
-
     @cached_property
     def plugindir(self):
         potential_paths = [
