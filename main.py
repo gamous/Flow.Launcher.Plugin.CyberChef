@@ -48,7 +48,7 @@ class CyberChef(FlowLauncher):
                 "icoPath": "Images/app.png",
                 "jsonRPCAction": {
                     "method": "open_url",
-                    "parameters": [self.site_url+"/#input={}".format(base64.b64encode(query.encode()).decode())],
+                    "parameters": [self.site_url+"/#input="+base64.b64encode(query.encode()).decode().strip('=')],
                 },
                 "contextData":[query],
                 "score": 0
